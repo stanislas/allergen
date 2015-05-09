@@ -7,7 +7,7 @@ setjdk() {
   export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 }
 
-export PATH=~/Library/soft/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
@@ -16,10 +16,19 @@ export PATH=$PATH:$GOPATH/bin
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 
+### VBox
+
+alias vbox-oracle-start="VBoxManage startvm 8bb8b96c-2536-4705-acd5-e5bf46756775 --type headless"
+alias vbox-oracle-stop="VBoxManage controlvm 8bb8b96c-2536-4705-acd5-e5bf46756775 poweroff"
+
 ### Gradle
 
 alias gcd='./gradlew --rerun-tasks clean assemble'
 alias gcdt='./gradlew --rerun-tasks clean assemble test'
+
+## Mercurial
+alias hg-pull-merge-push-pull='hg pull && hg merge && hg ci -m "merge" && hg push && hg pull -u'
+
 
 #envfile="$HOME/.gnupg/gpg-agent.env"
 #if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
@@ -69,5 +78,3 @@ setopt hist_ignore_space
 
 # Complete aliases
 setopt completealiases
-
-alias hg-pull-merge-push-pull='hg pull && hg merge && hg ci -m "merge" && hg push && hg pull -u'
