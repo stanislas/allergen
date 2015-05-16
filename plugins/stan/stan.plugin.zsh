@@ -30,6 +30,9 @@ alias gcdt='./gradlew --rerun-tasks clean assemble test'
 alias hg-pull-merge-push-pull='hg pull && hg merge && hg ci -m "merge" && hg push && hg pull -u'
 
 
+## GPG
+export LEIN_GPG=gpg2
+alias gpg=gpg2
 #envfile="$HOME/.gnupg/gpg-agent.env"
 #if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
 #    eval "$(cat "$envfile")"
