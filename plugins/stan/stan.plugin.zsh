@@ -7,6 +7,8 @@ setjdk() {
   export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 }
 
+setjdk 1.7
+
 export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin
 
 export GOROOT=/usr/local/opt/go/libexec
