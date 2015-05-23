@@ -2,12 +2,13 @@
 export M2_REPO=~/.m2/repository
 export ANT_OPTS="-Xmx2048m -Xms2048m -Djava.awt.headless=true"
 
-export JAVA_HOME=$(/usr/libexec/java_home)
 setjdk() {
   export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 }
 
-setjdk 1.7
+if [[ `uname` == 'Darwin' ]]; then
+    setjdk 1.7
+fi
 
 export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin
 
