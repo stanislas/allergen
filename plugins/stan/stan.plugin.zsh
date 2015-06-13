@@ -10,7 +10,7 @@ if [[ `uname` == 'Darwin' ]]; then
     setjdk 1.7
 fi
 
-export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin
+export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/usr/texbin
 
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
