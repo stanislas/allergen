@@ -7,7 +7,7 @@ setjdk() {
 }
 
 if [[ `uname` == 'Darwin' ]]; then
-    setjdk 1.7
+    setjdk 1.8
 fi
 
 export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/usr/texbin
