@@ -10,7 +10,7 @@ if [[ `uname` == 'Darwin' ]]; then
     setjdk 1.7
 fi
 
-export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/usr/texbin
+export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/Users/stan/Library/soft/context/tex/texmf-osx-64/bin:/usr/texbin
 
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
@@ -32,6 +32,12 @@ alias gcdt='./gradlew --rerun-tasks clean assemble test'
 ## Mercurial
 alias hg-pull-merge-push-pull='hg pull && hg merge && hg ci -m "merge" && hg push && hg pull -u'
 
+## Postgresql
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+##tvdxtat
+alias tvdxtat="/Users/stan/Library/soft/tvdxtat/tvdxtat.sh"
 
 ## GPG
 export LEIN_GPG=gpg2
