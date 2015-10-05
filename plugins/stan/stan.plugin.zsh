@@ -55,6 +55,7 @@ alias gpg=gpg2
 
 #sqlplus
 export DYLD_LIBRARY_PATH='/Users/stan/Library/soft/instantclient_11_2'
+export TNS_ADMIN=$DYLD_LIBRARY_PATH
 export PATH=$PATH:$DYLD_LIBRARY_PATH
 
 # Completion
