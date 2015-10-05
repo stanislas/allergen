@@ -53,6 +53,9 @@ alias gpg=gpg2
 #GPG_TTY=`tty`
 #export GPG_TTY
 
+#sqlplus
+export DYLD_LIBRARY_PATH='/Users/stan/Library/soft/instantclient_11_2'
+export PATH=$PATH:$DYLD_LIBRARY_PATH
 
 # Completion
 autoload -U compinit
