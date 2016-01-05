@@ -16,6 +16,8 @@ export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+export SBT_OPTS=-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64
+
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 
