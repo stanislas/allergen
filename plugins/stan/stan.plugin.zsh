@@ -94,3 +94,9 @@ setopt hist_ignore_space
 
 # Complete aliases
 setopt completealiases
+
+# Import secrets if they exists
+if [ -s ~/.secrets ] 
+then
+	source ~/.secrets
+fi
