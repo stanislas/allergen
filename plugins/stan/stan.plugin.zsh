@@ -16,6 +16,8 @@ export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
+
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 
@@ -40,8 +42,7 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias tvdxtat="/Users/stan/Library/soft/tvdxtat/tvdxtat.sh"
 
 ## GPG
-export LEIN_GPG=gpg2
-alias gpg=gpg2
+export LEIN_GPG=gpg
 #envfile="$HOME/.gnupg/gpg-agent.env"
 #if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
 #    eval "$(cat "$envfile")"
