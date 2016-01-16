@@ -21,6 +21,11 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 
+### localhost80
+
+alias localhost80-enable="sudo pfctl -ef ~/Library/port-forwarding/pf-localeighty.conf"
+alias localhost80-disable="sudo pfctl -df ~/Library/port-forwarding/pf-localeighty.conf"
+
 ### VBox
 
 alias vbox-oracle-start="VBoxManage startvm 8bb8b96c-2536-4705-acd5-e5bf46756775 --type headless"
