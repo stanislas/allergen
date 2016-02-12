@@ -18,8 +18,10 @@ export PATH=$PATH:$GOPATH/bin
 
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
 
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+export BOOT_JVM_OPTIONS="-Djava.awt.headless=true"
 
 ### localhost80
 
@@ -102,7 +104,7 @@ setopt hist_ignore_space
 setopt completealiases
 
 # Import secrets if they exists
-if [ -s ~/.secrets ] 
+if [ -s ~/.secrets ]
 then
 	source ~/.secrets
 fi
