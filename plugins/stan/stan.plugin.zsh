@@ -69,6 +69,11 @@ export PATH=$PATH:$DYLD_LIBRARY_PATH
 #local runit
 export SVDIR=/Users/stan/Library/service
 
+#nix
+if [ -f /Users/stan/.nix-profile/etc/profile.d/nix.sh ]; then
+	. /Users/stan/.nix-profile/etc/profile.d/nix.sh
+fi
+
 # Completion
 autoload -U compinit
 compinit
