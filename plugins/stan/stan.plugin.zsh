@@ -66,6 +66,9 @@ export DYLD_LIBRARY_PATH='/Users/stan/Library/soft/instantclient_11_2'
 export TNS_ADMIN=$DYLD_LIBRARY_PATH
 export PATH=$PATH:$DYLD_LIBRARY_PATH
 
+#local runit
+export SVDIR=/Users/stan/Library/service
+
 # Completion
 autoload -U compinit
 compinit
