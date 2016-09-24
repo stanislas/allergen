@@ -38,6 +38,9 @@ alias vbox-oracle-stop="VBoxManage controlvm 8bb8b96c-2536-4705-acd5-e5bf4675677
 alias gcd='./gradlew --rerun-tasks clean assemble'
 alias gcdt='./gradlew --rerun-tasks clean assemble test'
 
+### git
+alias git='noglob git'
+
 ## Mercurial
 alias hg-pull-merge-push-pull='hg pull && hg merge && hg ci -m "merge" && hg push && hg pull -u'
 
