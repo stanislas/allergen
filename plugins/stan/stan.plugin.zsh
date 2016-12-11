@@ -12,9 +12,8 @@ fi
 
 export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/Users/stan/Library/soft/context/tex/texmf-osx-64/bin:/usr/texbin
 
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/engineering/go
+export PATH=$PATH:/usr/local/go/bin
 
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
 
