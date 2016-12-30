@@ -80,6 +80,8 @@ export SVDIR=/Users/stan/Library/service
 
 export EDITOR="emacsclient -t"
 alias e="emacsclient -t"
+alias ec="emacsclient -c"
+alias e-kill="emacsclient -e '(kill-emacs)'"
 
 # Completion
 autoload -U compinit
