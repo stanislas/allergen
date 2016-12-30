@@ -76,6 +76,11 @@ export SVDIR=/Users/stan/Library/service
 #	. /Users/stan/.nix-profile/etc/profile.d/nix.sh
 #fi
 
+# Emacs
+
+export EDITOR="emacsclient -t"
+alias e="emacsclient -t"
+
 # Completion
 autoload -U compinit
 compinit
