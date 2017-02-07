@@ -125,3 +125,8 @@ if [ -s ~/.secrets ]
 then
 	source ~/.secrets
 fi
+
+if [ -s ~/.opam/opam-init/init.zsh ]
+then
+	 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+fi
