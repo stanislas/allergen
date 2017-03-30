@@ -50,6 +50,9 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 ##tvdxtat
 alias tvdxtat="/Users/stan/Library/soft/tvdxtat/tvdxtat.sh"
 
+##spectralogs
+alias spectralogs="envdir ${HOME}/.sky awslogs"
+
 ## GPG
 export LEIN_GPG=gpg
 #envfile="$HOME/.gnupg/gpg-agent.env"
