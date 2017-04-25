@@ -82,7 +82,7 @@ export SVDIR=/Users/stan/Library/service
 
 # Emacs
 
-export EDITOR="emacsclient -t"
+export EDITOR="vim"
 alias e="emacsclient -t"
 alias ec="emacsclient -c"
 alias e-kill="emacsclient -e '(kill-emacs)'"
