@@ -75,6 +75,9 @@ export PATH=$PATH:$DYLD_LIBRARY_PATH
 #local runit
 export SVDIR=/Users/stan/Library/service
 
+#node
+export PATH="/usr/local/opt/node@6/bin:$PATH"
+
 #nix
 #if [ -f /Users/stan/.nix-profile/etc/profile.d/nix.sh ]; then
 #	. /Users/stan/.nix-profile/etc/profile.d/nix.sh
