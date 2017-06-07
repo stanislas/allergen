@@ -10,12 +10,12 @@ if [[ `uname` == 'Darwin' ]]; then
     setjdk 1.8
 fi
 
-export PATH=/Users/stan/engineering/web/depot_tools:~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/Users/stan/Library/soft/context/tex/texmf-osx-64/bin:/usr/texbin:/Users/stan/.cargo/bin
+export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/Users/stan/Library/soft/context/tex/texmf-osx-64/bin:/usr/texbin:/Users/stan/.cargo/bin
 
-export GOPATH=$HOME/engineering/go
-export PATH=$PATH:/usr/local/go/bin
+#export GOPATH=$HOME/engineering/go
+#export PATH=$PATH:/usr/local/go/bin
 
-export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
+#export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -29,13 +29,13 @@ alias localhost80-disable="sudo pfctl -df ~/Library/port-forwarding/pf-localeigh
 
 ### VBox
 
-alias vbox-oracle-start="VBoxManage startvm 8bb8b96c-2536-4705-acd5-e5bf46756775 --type headless"
-alias vbox-oracle-stop="VBoxManage controlvm 8bb8b96c-2536-4705-acd5-e5bf46756775 poweroff"
+#alias vbox-oracle-start="VBoxManage startvm 8bb8b96c-2536-4705-acd5-e5bf46756775 --type headless"
+#alias vbox-oracle-stop="VBoxManage controlvm 8bb8b96c-2536-4705-acd5-e5bf46756775 poweroff"
 
 ### Gradle
 
-alias gcd='./gradlew --rerun-tasks clean assemble'
-alias gcdt='./gradlew --rerun-tasks clean assemble test'
+#alias gcd='./gradlew --rerun-tasks clean assemble'
+#alias gcdt='./gradlew --rerun-tasks clean assemble test'
 
 ### git
 alias git='noglob git'
@@ -68,15 +68,18 @@ export LEIN_GPG=gpg
 #export GPG_TTY
 
 #sqlplus
-export DYLD_LIBRARY_PATH='/Users/stan/Library/soft/instantclient_11_2'
-export TNS_ADMIN=$DYLD_LIBRARY_PATH
-export PATH=$PATH:$DYLD_LIBRARY_PATH
+#export DYLD_LIBRARY_PATH='/Users/stan/Library/soft/instantclient_11_2'
+#export TNS_ADMIN=$DYLD_LIBRARY_PATH
+#export PATH=$PATH:$DYLD_LIBRARY_PATH
 
 #local runit
 export SVDIR=/Users/stan/Library/service
 
 #node
 export PATH="/usr/local/opt/node@6/bin:$PATH"
+
+#bellboy
+alias tunnel-bellboy-qa="ssh -i ~/.ssh/aws-sky.pem -L4406:bef8-cluster.cluster-cz7wjvhcrwgr.eu-west-1.rds.amazonaws.com:3306  ec2-user@ec2-54-77-218-248.eu-west-1.compute.amazonaws.com"
 
 #nix
 #if [ -f /Users/stan/.nix-profile/etc/profile.d/nix.sh ]; then
