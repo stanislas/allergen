@@ -143,3 +143,6 @@ fi
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# leda
+alias leda-repl="docker exec -it leda-dev2 /root/work/leda/tools/repl-dev-docker.sh"
