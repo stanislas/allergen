@@ -146,3 +146,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # leda
 alias leda-repl="docker exec -it leda-dev2 /root/work/leda/tools/repl-dev-docker.sh"
+alias leda-bash="docker exec -it leda-dev2 /bin/bash"
+
+# anaconda
+export PATH="/Users/stan/anaconda/bin:$PATH"
