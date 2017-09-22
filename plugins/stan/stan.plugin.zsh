@@ -148,5 +148,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 alias leda-repl="docker exec -it leda-dev2 /root/work/leda/tools/repl-dev-docker.sh"
 alias leda-bash="docker exec -it leda-dev2 /bin/bash"
 
+# neutron core
+alias nc-repl="docker exec -it neutron-core-dev /root/work/neutron-core/tools/repl-dev-docker.sh"
+alias nc-bash="docker exec -it neutron-core-dev /bin/bash"
+
 # anaconda
 export PATH="/Users/stan/anaconda/bin:$PATH"
