@@ -152,5 +152,9 @@ alias leda-bash="docker exec -it leda-dev2 /bin/bash"
 alias nc-repl="docker exec -it neutron-core-dev /root/work/neutron-core/tools/repl-dev-docker.sh"
 alias nc-bash="docker exec -it neutron-core-dev /bin/bash"
 
+# monolith 
+alias mono-repl="docker exec -it monolith-dev /root/work/monolith/tools/repl-dev-docker.sh"
+alias mono-bash="docker exec -it monolith-dev /bin/bash"
+
 # anaconda
 export PATH="/Users/stan/anaconda/bin:$PATH"
