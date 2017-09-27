@@ -156,5 +156,9 @@ alias nc-bash="docker exec -it neutron-core-dev /bin/bash"
 alias mono-repl="docker exec -it monolith-dev /root/work/monolith/tools/repl-dev-docker.sh"
 alias mono-bash="docker exec -it monolith-dev /bin/bash"
 
+# timeflow 
+alias mono-repl="docker exec -it timeflow-dev /root/work/timeflow/tools/repl-dev-docker.sh"
+alias mono-bash="docker exec -it timeflow-dev /bin/bash"
+
 # anaconda
 export PATH="/Users/stan/anaconda/bin:$PATH"
