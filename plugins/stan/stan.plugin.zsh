@@ -53,6 +53,7 @@ alias tvdxtat="/Users/stan/Library/soft/tvdxtat/tvdxtat.sh"
 ##spectralogs
 alias skylogs="envdir ${HOME}/.sky awslogs"
 alias spectradevlogs="envdir ${HOME}/.spectradev awslogs"
+alias libradevfflogs="envdir ${HOME}/.libradevff awslogs"
 
 ## GPG
 export LEIN_GPG=gpg
