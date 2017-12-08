@@ -162,4 +162,4 @@ alias tf-repl="docker exec -it timeflow-dev /root/work/timeflow/tools/repl-dev-d
 alias tf-bash="docker exec -it timeflow-dev /bin/bash"
 
 # anaconda
-export PATH="/Users/stan/anaconda/bin:$PATH"
+export PATH="/Users/stan/miniconda3/bin:$PATH"
