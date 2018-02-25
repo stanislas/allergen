@@ -14,7 +14,7 @@ export PATH=~/Library/soft/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 export GOPATH=$HOME/engineering/go
-#export PATH=$PATH:/usr/local/go/bin
+export PATH=$GOPATH/bin:$PATH
 
 #export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
 
