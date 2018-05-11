@@ -164,3 +164,6 @@ alias tf-bash="docker exec -it timeflow-dev /bin/bash"
 
 # anaconda
 export PATH="/Users/stan/miniconda3/bin:$PATH"
+
+# LVRI
+export LVRI=/Users/stan/work/lvri/lvri
