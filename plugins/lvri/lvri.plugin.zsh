@@ -13,5 +13,13 @@ function lvri-db-reset {
 		cd $LVRI/
 		lein run -m tools.db/baseline-migrate # or just baseline to test migrations
 	}
-	popd
+	popd || echo 'popd'
+}
+
+function lvri-pw-reset {
+	pushd $LVRI
+	{
+		lein run -m tools.db/reset-passwords $1
+	}
+	popd || echo 'popd'
 }
