@@ -7,7 +7,7 @@ function lvri-db-reset-baseline {
 		psql -U postgres -d postgres -h localhost -p 5444 -f drop_db.sql
 		psql -U postgres -d postgres -h localhost -p 5444 -f setup_db.sql
 		export GPG_TTY=$(tty)
-		aws --profile deepimpact-skuld s3 cp s3://lvri/dumps/lvri_test_20180420.dump.pgp - | \
+		aws --profile deepimpact-dev s3 cp s3://lvri-data/dumps/lvri_test_20180420.dump.pgp - | \
   			gpg --decrypt | \
   			psql -U lvri_usr -d lvri -h localhost -p 5444 
 		pushd $LVRI/
@@ -23,7 +23,7 @@ function lvri-db-reset {
 		psql -U postgres -d postgres -h localhost -p 5444 -f drop_db.sql
 		psql -U postgres -d postgres -h localhost -p 5444 -f setup_db.sql
 		export GPG_TTY=$(tty)
-		aws --profile deepimpact-skuld s3 cp s3://lvri/dumps/lvri_test_20180420.dump.pgp - | \
+		aws --profile deepimpact-dev s3 cp s3://lvri-data/dumps/lvri_test_20180420.dump.pgp - | \
   			gpg --decrypt | \
   			psql -U lvri_usr -d lvri -h localhost -p 5444 
 		pushd $LVRI/
@@ -39,7 +39,7 @@ function lvri-aws-test-db-reset {
 		psql -U postgres -d postgres -h localhost -p 5445 -f drop_db.sql
 		psql -U postgres -d postgres -h localhost -p 5445 -f setup_db.sql
 		export GPG_TTY=$(tty)
-		aws --profile deepimpact-skuld s3 cp s3://lvri/dumps/lvri_test_20180420.dump.pgp - | \
+		aws --profile ddeepimpact-dev s3 cp s3://lvri-data/dumps/lvri_test_20180420.dump.pgp - | \
   			gpg --decrypt | \
   			psql -U lvri_usr -d lvri -h localhost -p 5445 
 		pushd $LVRI/
