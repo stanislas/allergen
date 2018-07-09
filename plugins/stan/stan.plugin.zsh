@@ -165,3 +165,5 @@ alias tf-bash="docker exec -it timeflow-dev /bin/bash"
 # anaconda
 export PATH="/Users/stan/miniconda3/bin:$PATH"
 
+# arduino
+export SKETCHBOOK_DIR=${HOME}/engineering/arduino
