@@ -162,6 +162,6 @@ alias mono-bash="docker exec -it monolith-dev /bin/bash"
 alias tf-repl="docker exec -it timeflow-dev /root/work/timeflow/tools/repl-dev-docker.sh"
 alias tf-bash="docker exec -it timeflow-dev /bin/bash"
 
-# anaconda
-export PATH="/Users/stan/miniconda3/bin:$PATH"
+# python 3
+export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 
