@@ -10,7 +10,7 @@ if [[ `uname` == 'Darwin' ]]; then
     setjdk 1.8
 fi
 
-export PATH=~/Library/soft/bin:~/.local/bin:/usr/local/bin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/Users/stan/Library/soft/context/tex/texmf-osx-64/bin:/usr/texbin:/Users/stan/.cargo/bin
+export PATH=~/Library/soft/bin:~/.local/bin:/usr/local/bin:/usr/local/sbin:~/Library/PackageManager/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/engineering/tools/crsh/target/bin:/Users/stan/Library/soft/context/tex/texmf-osx-64/bin:/usr/texbin:/Users/stan/.cargo/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 export GOPATH=$HOME/engineering/go
