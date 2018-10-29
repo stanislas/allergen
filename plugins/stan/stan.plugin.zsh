@@ -165,3 +165,5 @@ alias tf-bash="docker exec -it timeflow-dev /bin/bash"
 # python 3
 export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 
+# pipenv
+export PIPENV_VENV_IN_PROJECT=1
