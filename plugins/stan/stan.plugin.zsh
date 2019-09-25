@@ -86,9 +86,6 @@ setopt autocd
 autoload -U promptinit
 promptinit
 
-# autocd
-setopt autocd
-
 # History
 export HISTFILE=~/.zsh_history
 export HISTSIZE=100000
