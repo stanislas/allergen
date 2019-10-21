@@ -62,6 +62,11 @@ export LEIN_GPG=gpg
 #	. /Users/stan/.nix-profile/etc/profile.d/nix.sh
 #fi
 
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # Completion
 autoload -U compinit
 compinit
