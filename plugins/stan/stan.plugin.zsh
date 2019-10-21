@@ -67,6 +67,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# poetry
+alias pact='source "$( poetry env info --path )/bin/activate"'
+
 # Completion
 autoload -U compinit
 compinit
