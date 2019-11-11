@@ -13,3 +13,5 @@ export LC_ALL=en_US.UTF-8
 export PATH=$GOPATH/bin:$CARGOPATH/bin:/${HOME}/Library/soft/bin/:$HOME/.dotnet:$HOME/.local/bin:$PATH
 export LEIN_GPG=gpg
 export EDITOR="vim"
+
+export PYENV_ROOT=/usr/local/var/pyenv

@@ -3,7 +3,7 @@ setjdk() {
 }
 
 if [[ `uname` == 'Darwin' ]]; then
-    setjdk 1.8
+    setjdk 11
 fi
 
 #export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
@@ -62,6 +62,14 @@ export LEIN_GPG=gpg
 #if [ -f /Users/stan/.nix-profile/etc/profile.d/nix.sh ]; then
 #	. /Users/stan/.nix-profile/etc/profile.d/nix.sh
 #fi
+
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# poetry
+alias pact='source "$( poetry env info --path )/bin/activate"'
 
 # Completion
 autoload -U compinit
