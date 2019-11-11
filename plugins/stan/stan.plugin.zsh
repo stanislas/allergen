@@ -25,6 +25,7 @@ alias localhost80-disable="sudo pfctl -df ~/Library/port-forwarding/pf-localeigh
 
 ### git
 alias git='noglob git'
+alias git-codesmith-clone='git clone -c credential.useHttpPath=true -c credential.helper='"'"'!/usr/local/bin/aws codecommit --profile=codesmith credential-helper $@'"'"
 
 ## Mercurial
 alias hg-pull-merge-push-pull='hg pull && hg merge && hg ci -m "merge" && hg push && hg pull -u'
