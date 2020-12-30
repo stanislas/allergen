@@ -3,7 +3,7 @@ setjdk() {
 }
 
 if [[ `uname` == 'Darwin' ]]; then
-    setjdk 14
+    setjdk 15
 fi
 
 #export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
