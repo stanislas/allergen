@@ -113,3 +113,6 @@ if [ -s ~/.secrets ]
 then
 	source ~/.secrets
 fi
+
+# git svn on mac os Catalina
+export PERL5LIB=/usr/local/lib/perl5/site_perl/5.18.4/darwin-thread-multi-2level
