@@ -3,7 +3,7 @@ setjdk() {
 }
 
 if [[ `uname` == 'Darwin' ]]; then
-    setjdk 15
+    setjdk 16
 fi
 
 #export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Xmx2048m -XX:+UseConcMarkSweepGC -d64"
@@ -64,9 +64,9 @@ export LEIN_GPG=gpg
 #fi
 
 # pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+#if command -v pyenv 1>/dev/null 2>&1; then
+#  eval "$(pyenv init -)"
+#fi
 
 # poetry
 alias pact='source "$( poetry env info --path )/bin/activate"'
