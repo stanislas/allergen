@@ -127,6 +127,9 @@
 (global-set-key (kbd "s-f") 'isearch-forward)
 (global-set-key (kbd "s-y") 'hippie-expand)
 (global-set-key (kbd "s-h") 'help-command)
+(global-set-key (kbd "s-!") 'delete-other-windows)
+(global-set-key (kbd "s-@") 'split-window-below)
+(global-set-key (kbd "s-#") 'split-window-right)
 
 (define-key key-translation-map (kbd "s-e") (kbd "C-g"))
 
@@ -170,8 +173,26 @@
   :config
   (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode))
 
+(use-package dired
+  :config
+  (setq dired-use-ls-dired t
+        insert-directory-program "/usr/local/bin/gls"
+        dired-listing-switches "-aBhl --group-directories-first"))
+
 
 ;; third party
+
+(use-package easy-kill
+  :ensure t
+  :config
+  (global-set-key [remap kill-ring-save] 'easy-kill))
+
+(use-package anzu
+  :ensure t
+  :bind (("M-%" . anzu-query-replace)
+         ("C-M-%" . anzu-query-replace-regexp))
+  :config
+  (global-anzu-mode))
 
 (use-package rainbow-delimiters
   :ensure t)
@@ -204,20 +225,144 @@
   :config
   (projectile-mode +1))
 
-;; cider
+(use-package paredit
+  :ensure t
+  :config
+  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+  ;; enable in the *scratch* buffer
+  (add-hook 'lisp-interaction-mode-hook #'paredit-mode)
+  (add-hook 'ielm-mode-hook #'paredit-mode)
+  (add-hook 'lisp-mode-hook #'paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+  (diminish 'paredit-mode "()"))
+
+(use-package expand-region
+  :ensure t
+  :bind
+  ("A-<up>" . er/expand-region)
+  ("A-<down>" . er/contract-region))
+
+(use-package move-text
+  :ensure t
+  :bind
+  (("s-<up>" . move-text-up)
+   ("s-<down>" . move-text-down)))
+
+(use-package clojure-mode
+  :ensure t
+  :config
+  ;; teach clojure-mode about some macros that I use on projects like
+  ;; nREPL and Orchard
+  ;; (define-clojure-indent
+  ;;   (returning 1)
+  ;;   (testing-dynamic 1)
+  ;;   (testing-print 1))
+  (add-hook 'clojure-mode-hook #'paredit-mode)
+  (add-hook 'clojure-mode-hook #'subword-mode)
+  (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode))
+
+(use-package inf-clojure
+  :ensure t
+  :config
+  (add-hook 'inf-clojure-mode-hook #'paredit-mode)
+  (add-hook 'inf-clojure-mode-hook #'rainbow-delimiters-mode))
 
 (use-package cider
+  :ensure t
+  :config
+  (setq nrepl-log-messages t)
+  (setq clojure-toplevel-inside-comment-form t)
+  (add-hook 'cider-repl-mode-hook #'paredit-mode)
+  (add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode))
+
+(use-package flycheck-joker
   :ensure t)
 
-;; company
+(use-package web-mode
+  :ensure t
+  :custom
+  (web-mode-markup-indent-offset 2)
+  (web-mode-css-indent-offset 2)
+  (web-mode-code-indent-offset 2)
+  :config
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode)))
+
+(use-package markdown-mode
+  :ensure t
+  :mode (("\\.md\\'" . gfm-mode)
+         ("\\.markdown\\'" . gfm-mode))
+  :config
+  (setq markdown-fontify-code-blocks-natively t))
+
+(use-package yaml-mode
+  :ensure t)
+
+(use-package selectrum
+  :ensure t
+  :config
+  (selectrum-mode +1))
+
+(use-package selectrum-prescient
+  :ensure t
+  :config
+  (selectrum-prescient-mode +1)
+  (prescient-persist-mode +1))
 
 (use-package company
-  :ensure t)
+  :ensure t
+  :config
+  (setq company-idle-delay 0.5)
+  (setq company-show-numbers t)
+  (setq company-tooltip-limit 10)
+  (setq company-minimum-prefix-length 2)
+  (setq company-tooltip-align-annotations t)
+  ;; invert the navigation direction if the the completion popup-isearch-match
+  ;; is displayed on top (happens near the bottom of windows)
+  (setq company-tooltip-flip-when-above t)
+  (global-company-mode)
+  (diminish 'company-mode))
 
-;; ivy
+(use-package flycheck
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode))
 
-(use-package ivy
-  :ensure t)
+;; (use-package flycheck-eldev
+
+
+(use-package hl-todo
+  :ensure t
+  :config
+  (setq hl-todo-highlight-punctuation ":")
+  (global-hl-todo-mode))
+
+(use-package undo-tree
+  :ensure t
+  :config
+  ;; autosave the undo-tree history
+  (setq undo-tree-history-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq undo-tree-auto-save-history t)
+  (global-undo-tree-mode +1)
+  (diminish 'undo-tree-mode))
+
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key (kbd "s-t") 'ace-window)
+  (global-set-key [remap other-window] 'ace-window))
+
+;; (use-package zop-to-char
+;;   :ensure t
+;;   :bind (("M-z" . zop-up-to-char)
+;;          ("M-Z" . zop-to-char)))
+
+;; ;; ivy
+
+;; (use-package ivy
+;;   :ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -225,7 +370,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(rainbow-delimiters rainbow-delimiter projectile ag git-timemachine diminish use-package markdown-mode magit ivy company cider)))
+   '(ace-window undo-tree hl-todo flycheck-eldev selectrum-prescient selectrum yaml-mode web-mode flycheck-joker inf-clojure anzu easy-kill expand-region paredit rainbow-delimiters rainbow-delimiter projectile ag git-timemachine diminish use-package markdown-mode magit ivy company cider)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
