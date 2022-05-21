@@ -116,3 +116,6 @@ fi
 
 # git svn on mac os Catalina
 export PERL5LIB=/usr/local/opt/subversion/lib/perl5/site_perl/5.30.2/darwin-thread-multi-2level
+
+# graalvm on mac
+export GRAALVM_HOME=/Users/stan/Library/soft/graalvm-ce-java17-22.2.0-dev/graalvm/Contents/Home
