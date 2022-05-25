@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+(defn sh!
+  "Execute the given shell command and redirect the ouput/error to the standard output error; returns nil."
+  [^Path directory & args]
+  (let [^Process process (.. (ProcessBuilder. ^List args)
+                             (directory (fs/file directory))
+                             (inheritIO)
+                             (start))]
+    (.waitFor process)))
+
+
+(def source ())
+
+(sh! . "osascript" "-e"
+     (str  "tell application \"Finder\" to make alias file to (POSIX file \"") source "\") at (POSIX file \"" destination "\")")
