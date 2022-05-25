@@ -119,3 +119,11 @@ export PERL5LIB=/usr/local/opt/subversion/lib/perl5/site_perl/5.30.2/darwin-thre
 
 # graalvm on mac
 export GRAALVM_HOME=/Users/stan/Library/soft/graalvm-ce-java17-22.2.0-dev/Contents/Home
+
+_bb_tasks() {
+    local matches=(`bb tasks |tail -n +3 |cut -f1 -d ' '`)
+    compadd -a matches
+    _files # autocomplete filenames as well
+}
+
+compdef _bb_tasks bb
