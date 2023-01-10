@@ -10,7 +10,8 @@ export ANT_OPTS="-Xmx2048m -Xms2048m -Djava.awt.headless=true"
 
 export LANG="en_US.UTF-8"
 export LC_ALL=en_US.UTF-8
-export PATH=$GOPATH/bin:$CARGOPATH/bin:/${HOME}/Library/soft/bin/:$HOME/.dotnet:$HOME/.local/bin:$PATH
+export PATH="$GOPATH/bin:$CARGOPATH/bin:/${HOME}/Library/soft/bin/:$HOME/.dotnet:$HOME/.local/bin:/Users/stan/Library/Application Support/JetBrains/Toolbox/scripts/:$PATH"
+export LESS="--no-init --quit-if-one-screen -R"
 export LEIN_GPG=gpg
 export EDITOR="vim"
 
