@@ -160,3 +160,13 @@ function kc() {
 function kgetall() {
   kubectl api-resources --verbs=list --namespaced -o name | xargs -n1 kubectl get --show-kind --ignore-not-found "$@"
 }
+
+alias k=kubectl
+
+function jqlog() {
+    if [ "$#" -eq "0" ]; then
+       tee >(grep -v "^{") | grep "^{" |  jq -r '."@timestamp" + "\t" + .level + "\t" + .message + "\t" + .stack_trace'
+    else
+        tee >(grep -v "^{") | grep "^{" | jq $@
+    fi
+}
