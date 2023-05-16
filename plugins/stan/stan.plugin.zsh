@@ -127,3 +127,36 @@ _bb_tasks() {
 }
 
 compdef _bb_tasks bb
+
+# kubernetes
+
+export FZF_DEFAULT_OPTS="--height=95% --reverse --preview-window 'right:57%' \
+--bind ctrl-y:preview-up,ctrl-e:preview-down,\
+ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,\
+shift-up:preview-top,shift-down:preview-bottom,\
+alt-up:half-page-up,alt-down:half-page-down"
+FILE_FD="fd --type f --hidden | sed 's|^\./||g'"
+DIRECTORY_FD="fd --type d --hidden | sed 's|^\./||g'"
+export FZF_DEFAULT_COMMAND=$FILE_FD
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_CTRL_T_OPTS="--reverse --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --bind \"ctrl-alt-f:reload($FILE_FD)\" --bind \"ctrl-alt-d:reload($DIRECTORY_FD)\""
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_ALT_C_COMMAND=$DIRECTORY_FD
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+
+# Change k8s namespace
+function kn() {
+  namespace=$(kubectl get ns -o name | sed 's|namespace/||g' | fzf) 
+  if [[ ! -z "$namespace" ]]; then kubectl config set-context --current --namespace=$namespace; fi
+}
+
+# Change k8s context
+function kc() {
+  cluster=$(kubectl config get-contexts -o name | fzf)
+  if [[ ! -z "$cluster" ]]; then kubectl config use-context $cluster; fi
+}
+
+# Get all resources for a namespace
+function kgetall() {
+  kubectl api-resources --verbs=list --namespaced -o name | xargs -n1 kubectl get --show-kind --ignore-not-found "$@"
+}
