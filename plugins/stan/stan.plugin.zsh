@@ -170,3 +170,5 @@ function jqlog() {
         tee >(grep -v "^{") | grep "^{" | jq $@
     fi
 }
+
+alias gfb='./gradlew formatKotlin build'
