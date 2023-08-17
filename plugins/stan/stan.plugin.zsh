@@ -173,3 +173,9 @@ function jqlog() {
 
 alias gfb='./gradlew formatKotlin build'
 alias astro="NVIM_APPNAME=astronvim nvim"
+
+# Go stuff
+#
+export GONOPROXY="hslu.ch,gitlab.enterpriselab.ch,gitlab.jaywalker.linkyard-cloud.ch"
+export GONOSUMDB="hslu.ch,gitlab.enterpriselab.ch,gitlab.jaywalker.linkyard-cloud.ch"
+
