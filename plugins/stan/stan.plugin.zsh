@@ -173,6 +173,8 @@ function jqlog() {
 
 alias gfb='./gradlew formatKotlin build'
 alias astro="NVIM_APPNAME=astronvim nvim"
+env NVIM_APPNAME=astronvim
+ali
 
 # Go stuff
 #
