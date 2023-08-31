@@ -174,7 +174,9 @@ function jqlog() {
 alias gfb='./gradlew formatKotlin build'
 alias astro="NVIM_APPNAME=astronvim nvim"
 env NVIM_APPNAME=astronvim
-ali
+
+alias ix-ssh-fwd="ssh ix-fwd"
+alias ix-rmq-fwd="kubectl --namespace rabbitmq port-forward service/jaywalker 55671:5671"
 
 # Go stuff
 #
