@@ -176,7 +176,7 @@ alias astro="NVIM_APPNAME=astronvim nvim"
 export NVIM_APPNAME=astronvim
 
 alias ix-ssh-fwd="ssh ix-fwd"
-alias ix-rmq-fwd="kubectl --context stu-test-context --namespace rabbitmq port-forward service/jaywalker 55671:5671"
+alias ix-rmq-fwd="kubectl --context stu-test-context --namespace rabbitmq port-forward service/jaywalker 55671:5671 55674:5551"
 
 # Go stuff
 #
