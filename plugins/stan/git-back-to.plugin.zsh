@@ -1,4 +1,4 @@
-# Filename: _mycommand
+# Filename: git-back-to.plugin.zsh
 #compdef git-back-to
 
 _git-back-to() {
