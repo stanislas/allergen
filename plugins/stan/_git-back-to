@@ -1,4 +1,4 @@
-# Filename: git-back-to.plugin.zsh
+# Filename: _git-back-to
 #compdef git-back-to
 
 _git-back-to() {
@@ -7,4 +7,4 @@ _git-back-to() {
   _describe 'branches' branches && ret=0
 }
 
-#_git-back-to "$@"
+_git-back-to "$@"
