@@ -1,0 +1,6 @@
+# Filename: _git-backto
+#compdef git-backto
+
+_git-backto() { __git_branch_names }
+
+_git-backto "$@"

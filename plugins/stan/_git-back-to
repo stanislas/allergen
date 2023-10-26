@@ -1,22 +1,6 @@
 # Filename: _git-back-to
 #compdef git-back-to
 
-_git-back-to() {
-  local branches
-  branches=($(git for-each-ref --format='%(refname:short)' refs/heads/))
-  _arguments \
-    '1: :->branches' \
-    '*:: :->args'
-  case $state in
-    (branches)
-      _describe 'branches' branches && ret=0
-      _description branches 'Go back to the selected branch'
-      ;;
-    (args)
-      # Your custom arguments and options for the mycommand subcommand
-      # ...
-      ;;
-  esac
-}
+_git-back-to() { __git_branch_names }
 
 _git-back-to "$@"
