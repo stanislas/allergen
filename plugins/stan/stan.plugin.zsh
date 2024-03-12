@@ -183,3 +183,6 @@ alias ix-rmq-fwd="kubectl --context stu-test-context --namespace rabbitmq port-f
 export GONOPROXY="hslu.ch,gitlab.enterpriselab.ch,gitlab.jaywalker.linkyard-cloud.ch"
 export GONOSUMDB="hslu.ch,gitlab.enterpriselab.ch,gitlab.jaywalker.linkyard-cloud.ch"
 
+## GPG
+alias gpg-jw-encrypt="gpg --encrypt -r stan@codesmith.ch -r daniel.pfaeffli@jaywalker.ch -r entor.arifi@jaywalker.ch -r florian.baer@jaywalker.ch -r info@jaywalker.ch"
+
